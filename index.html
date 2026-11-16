@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure Cloud Storage</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+    <aside class="sidebar">
+        <div class="logo">☁ Azure<span>Cloud</span></div>
+        <p class="menu-title">МЕНЮ</p>
+
+        <button class="nav active" data-view="all">▦ Все файлы</button>
+        <button class="nav" data-view="images">▧ Изображения</button>
+        <button class="nav" data-view="documents">▤ Документы</button>
+        <button class="nav" data-view="other">▣ Другие файлы</button>
+
+        <div class="sidebar-bottom">
+            <div class="storage-box">
+                <p>☁ Локальное хранилище</p>
+                <h3 id="sidebarCount">0 файлов</h3>
+                <small>Демонстрация Azure Blob Storage</small>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main">
+        <header class="topbar">
+            <div>
+                <h1>Облачное хранилище</h1>
+                <p>Управляйте файлами в одном месте</p>
+            </div>
+            <div class="avatar">AC</div>
+        </header>
+
+        <section class="hero">
+            <div>
+                <span class="hero-tag">CLOUD STORAGE</span>
+                <h2>Добро пожаловать в Azure Cloud!</h2>
+                <p>Загружайте, храните и управляйте своими файлами.</p>
+                <button id="heroUpload">+ Загрузить файл</button>
+            </div>
+            <div class="hero-icon">☁</div>
+        </section>
+
+        <section class="stats">
+            <div class="stat-card">
+                <div class="stat-icon blue">▤</div>
+                <p>Всего файлов</p>
+                <h2 id="totalFiles">0</h2>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon purple">▧</div>
+                <p>Изображения</p>
+                <h2 id="totalImages">0</h2>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon green">◉</div>
+                <p>Занято места</p>
+                <h2 id="totalSize">0 B</h2>
+            </div>
+        </section>
+
+        <section class="files-section">
+            <div class="section-header">
+                <div>
+                    <h2 id="sectionTitle">Мои файлы</h2>
+                    <p>Ваши загруженные документы и медиа</p>
+                </div>
+                <button class="upload-btn" id="uploadBtn">
+                    + Добавить файл
+                </button>
+            </div>
+
+            <input type="text" id="searchInput"
+                   placeholder="🔍 Поиск по названию файла...">
+
+            <div class="file-list" id="fileList"></div>
+
+            <div class="empty" id="emptyState">
+                <div>📂</div>
+                <h3>Здесь пока нет файлов</h3>
+                <p>Загрузите первый файл, чтобы начать работу.</p>
+            </div>
+        </section>
+
+        <footer>
+            Azure Cloud Storage | Учебный проект
+        </footer>
+    </main>
+</div>
+
+<input type="file" id="fileInput" multiple hidden>
+<div id="toast" class="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
